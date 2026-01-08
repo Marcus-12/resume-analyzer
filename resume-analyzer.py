@@ -50,7 +50,7 @@ def find_missing_keywords(resume_text, job_text):
 st.title("AI Resume Analyzer")
 st.write("Upload your resume and paste a job description to get a match score!")
 
-resume_file = st.file_uploader("Upload yor Resume (PDF only)", type=["pdf"])
+resume_file = st.file_uploader("Upload your Resume (PDF only)", type=["pdf"])
 
 job_description = st.text_area(
     "Paste the Job Description",
@@ -71,6 +71,9 @@ if st.button("Analyze"):
         missing_keywords = find_missing_keywords(resume_text, job_description)
         
         st.subheader("Suggestions to Improve:")
+        
+        st.subheader("Extracted Resume Text Preview:")
+        st.text_area("", resume_text, height=300)
         
         if missing_keywords:
             st.write("Consider adding or emphasizing the following keywords from the job description:")
