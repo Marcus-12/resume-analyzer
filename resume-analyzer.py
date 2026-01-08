@@ -25,7 +25,7 @@ def calculate_match_score(resume_text, job_description):
 
 
 # ----------------------------------------
-# UI
+# User Interface
 # ----------------------------------------
 st.title("AI Resume Analyzer")
 st.write("Upload your resume and paste a job description to get a match score!")
