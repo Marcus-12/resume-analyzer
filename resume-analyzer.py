@@ -1,6 +1,6 @@
 import streamlit as st
 import pdfplumber
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer # A powerful tool for converting a collection of raw documents into a matrix.
 from sklearn.metrics.pairwise import cosine_similarity
 
 # ---------------------------------------
@@ -24,7 +24,7 @@ def extract_text_from_pdf(pdf_file):
 
 def calculate_match_score(resume_text, job_description):
     """Compute similarity score using TF-IDF + cosine similarity"""
-    vectorizer = TfidfVectorizer()
+    vectorizer = TfidfVectorizer() 
     vectors = vectorizer.fit_transform([resume_text, job_description])
     score = cosine_similarity(vectors[0:1], vectors[1:2])[0][0]
     return round(score * 100, 2)
