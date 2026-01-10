@@ -126,7 +126,7 @@ def calculate_skill_coverage(resume_text, job_text, grouped_skills):
 # ----------------------------------------
 # Streamlit UI
 # ----------------------------------------
-st.title("🌟 AI Resume Analyzer")
+st.title("AI Resume Analyzer")
 st.write("Upload your resume and paste a job description to get a match score, auto-detected role, skill coverage, and actionable suggestions!")
 
 resume_file = st.file_uploader("Upload your Resume (PDF only)", type=["pdf"])
@@ -153,21 +153,21 @@ if st.button("Analyze"):
 
         # Skill coverage
         coverage = calculate_skill_coverage(resume_text, job_description, grouped)
-        st.subheader("📊 Skill Coverage by Category")
+        st.subheader("Skill Coverage by Category")
         for category, percent in coverage.items():
             st.write(f"{category}: {percent}%")
             st.progress(percent / 100)
 
         # Suggestions
-        st.subheader("📝 Suggestions to Improve Your Resume")
+        st.subheader(" Suggestions to Improve Your Resume")
         if bullets:
             for bullet in bullets:
                 st.write(bullet)
         else:
-            st.success("Excellent! Your resume already aligns well with this role 🎯")
+            st.success("Excellent! Your resume already aligns well with this role ")
 
         # Resume preview
-        st.subheader("📄 Extracted Resume Text Preview")
+        st.subheader(" Extracted Resume Text Preview")
         st.text_area("", resume_text, height=300)
 
     else:
