@@ -1,4 +1,1 @@
-streamlit
-pdfplumber
-pdfminer.six
-scikit-learn
+
